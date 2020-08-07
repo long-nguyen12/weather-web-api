@@ -61,7 +61,7 @@ class Current extends Component {
     render(){
         const {data, city_name, country_code} = this.props.data;
         return(
-          <div style={{paddingLeft: 30, paddingRight: 30}}>
+          <div style={{paddingLeft: 30, paddingRight: 30, color: 'red'}} className='text-danger'>
             <h1 style={{fontSize: 25}}><b>Air Quality</b></h1>
             <div>
               {data && data.map((value, index) => {
@@ -88,56 +88,58 @@ class Current extends Component {
                           />
                         </div>
                       </Row>
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Place</h3>
-                          </div>
-                          <div className="col-lg-4">
-                              <h3>{city_name}, {country_code}</h3>
-                          </div>
-                      </div>
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Air Quality</h3>
-                          </div>
-                          <div className="col-lg-4">
-                            {
-                              this.getStatus(value.aqi)
-                            }
-                          </div>
-                      </div>
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Concentration of surface O3</h3>
-                          </div>
-                          <div className="col-lg-4">
-                            <h3>{value.o3}</h3>
-                          </div>
-                      </div> 
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Concentration of surface SO2</h3>
-                          </div>
-                          <div className="col-lg-4">
-                            <h3>{value.so2}</h3>
-                          </div>
-                      </div>  
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Concentration of surface NO2</h3>
-                          </div>
-                          <div className="col-lg-4">
-                            <h3>{value.no2}</h3>
-                          </div>
-                      </div> 
-                      <div className="row" style={{borderBottom: "1px solid aqua"}}>
-                          <div className="col-lg-8">
-                              <h3>Concentration of carbon monoxide</h3>
-                          </div>
-                          <div className="col-lg-4">
-                            <h3>{value.co}</h3>
-                          </div>
-                      </div>
+                      <div >
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8 ">
+                                <h3 className=''>Place</h3>
+                            </div>
+                            <div className="col-lg-4">
+                                <h3 className=''>{city_name}, {country_code}</h3>
+                            </div>
+                        </div>
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8">
+                                <h3>Air Quality</h3>
+                            </div>
+                            <div className="col-lg-4">
+                              {
+                                this.getStatus(value.aqi)
+                              }
+                            </div>
+                        </div>
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8">
+                                <h3>Concentration of surface O3</h3>
+                            </div>
+                            <div className="col-lg-4">
+                              <h3>{value.o3}</h3>
+                            </div>
+                        </div> 
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8">
+                                <h3>Concentration of surface SO2</h3>
+                            </div>
+                            <div className="col-lg-4">
+                              <h3>{value.so2}</h3>
+                            </div>
+                        </div>  
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8">
+                                <h3>Concentration of surface NO2</h3>
+                            </div>
+                            <div className="col-lg-4">
+                              <h3>{value.no2}</h3>
+                            </div>
+                        </div> 
+                        <div className="row" style={{borderBottom: "1px solid aqua"}}>
+                            <div className="col-lg-8">
+                                <h3>Concentration of carbon monoxide</h3>
+                            </div>
+                            <div className="col-lg-4">
+                              <h3>{value.co}</h3>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                   );
               })}
